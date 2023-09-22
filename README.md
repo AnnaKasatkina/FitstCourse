@@ -1,2 +1,2 @@
-# FitstCourse
+# FirstCourse
 Репозиторий для домашек на первом курсе
