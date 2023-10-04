@@ -33,7 +33,7 @@ void bubbleSort(int *array, int lenght)
     {
         for (int j = 2; j < lenght; j += 2)
         {
-            if (array[j] < array[j - 1])
+            if (array[j] < array[j - 2])
             {
                 int intermediate = array[j];
                 array[j] = array[j - 2];
