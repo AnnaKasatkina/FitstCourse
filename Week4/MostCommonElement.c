@@ -110,7 +110,7 @@ int main(void)
 
     fclose(fp);
 
-    quickSort(array, 0, lenght);
+    quickSort(array, 0, lenght - 1);
 
     printf("%d the most common element in the array: ", mostCommonElement(array, lenght));
     printing(array, lenght);
