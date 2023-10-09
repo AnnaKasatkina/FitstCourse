@@ -6,13 +6,65 @@
 
 #include <stdio.h>
 
-#include "Sorting.h"
-
 void printing(int *array, int lenght)
 {
     for (int i = 0; i < lenght; i++)
         printf("%d ", array[i]);
     printf("\n\n");
+}
+
+int movementOfSigns(int *array, int left, int right)
+{
+    int pivot = array[(left + right) / 2];
+    while (left <= right)
+    {
+        while (array[left] < pivot)
+        {
+            left++;
+        }
+
+        while (array[right] > pivot)
+        {
+            right--;
+        }
+
+        int temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
+
+        left++;
+        right--;
+    }
+
+    return left;
+}
+
+void insertionSort(int *array, int start, int end)
+{
+    for (start + 1; start < end; start++)
+    {
+        int sorted = start;
+        while (sorted > -1 && array[sorted] > array[sorted + 1])
+        {
+            int temp = array[sorted];
+            array[sorted] = array[sorted + 1];
+            array[sorted + 1] = temp;
+            sorted--;
+        }
+    }
+}
+
+void quickSort(int *array, int start, int end)
+{
+    if (end - start < 10)
+    {
+        insertionSort(array, start, end);
+        return;
+    }
+    int rightStart = movementOfSigns(array, start, end);
+
+    quickSort(array, start, rightStart - 1);
+    quickSort(array, rightStart, end);
 }
 
 int mostCommonElement(int *array, int lenght)
@@ -42,8 +94,21 @@ int mostCommonElement(int *array, int lenght)
 
 int main(void)
 {
-    int lenght = 5;
-    int array[] = {0, 3, 4, 7, 4};
+    FILE* fp = fopen("my_file.txt", "r");
+    if (fp == NULL)
+    {
+        return 1;
+    }
+
+    int array[1000] = {};
+    int lenght = 0;
+
+    while (fscanf(fp, "%d ", &array[lenght]) == 1)
+    {
+        lenght++;
+    }
+
+    fclose(fp);
 
     quickSort(array, 0, lenght);
 
