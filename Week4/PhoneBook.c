@@ -32,13 +32,13 @@ void addEntry(PhoneBookEntry *buffer, int length)
     printf("Введите имя контакта: ");
     if (scanf("%s", buffer[length].name) != 1)
     {
-        print("Ошибка!");
+        printf("Ошибка!");
     }
 
     printf("Введите номер телефона: ");
     if (scanf("%s", buffer[length].phone) != 1)
     {
-        print("Ошибка!");
+        printf("Ошибка!");
     }
 
     printf("\n");
@@ -156,7 +156,7 @@ int main()
     PhoneBookEntry buffer[100] = {};
 
     int length = 0;
-    while (fscanf(file, "%s - %s", buffer[length].name, buffer[length].phone) == 2)
+    while (fscanf(file, "%s - %[^\n]", buffer[length].name, buffer[length].phone) == 2)
     {
         length++;
     }
