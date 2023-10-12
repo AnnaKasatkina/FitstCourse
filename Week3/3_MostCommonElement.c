@@ -72,7 +72,7 @@ void testMostCommonElement()
 void testIdenticalElements()
 {
     int testingArray[] = {1, 1, 1, 2, 2, 2, 3, 3, 3};
-    int lenght = 9;
+    int lenght = 19;
     int answer = 3;
 
     qsort(testingArray, lenght, sizeof(int), compare);

@@ -1,0 +1,5 @@
+﻿  MostCommonElement.c
+  Sort.c
+C:\HomeWork\FitstCourse\Week4\MostCommonElement\Sort.c(6,16): warning C4552: "+": результат выражения не используется
+  Создание кода...
+  MostCommonElement.vcxproj -> C:\HomeWork\FitstCourse\Week4\MostCommonElement\x64\Debug\MostCommonElement.exe

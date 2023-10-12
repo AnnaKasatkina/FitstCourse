@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/HomeWork/FitstCourse",
-      "program": "c:/HomeWork/FitstCourse/build/Debug/outDebug",
+      "cwd": "c:/HomeWork/FitstCourse/Week4",
+      "program": "c:/HomeWork/FitstCourse/Week4/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
